@@ -4,8 +4,7 @@ import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { toast } from "react-toastify";
 
-const CheckOutForm = ({pause,id}) => {
-  // console.log(pause);
+const CheckOutForm = ({ pause, id }) => {
   const [transactionId, setTransactionId] = useState("");
   const stripe = useStripe();
   const elements = useElements();
@@ -41,14 +40,14 @@ const CheckOutForm = ({pause,id}) => {
       return;
     }
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
+    const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card,
     });
 
-    if (error) {
-      console.log("Payment error", error);
-      setError(error.message);
+    if (paymentMethodError) {
+      console.log("Payment error", paymentMethodError);
+      setError(paymentMethodError.message);
       return;
     } else {
       console.log("Payment method", paymentMethod);
@@ -77,20 +76,20 @@ const CheckOutForm = ({pause,id}) => {
       setError(confirmError.message);
     } else {
       console.log("Payment intent", paymentIntent);
-      let danateMoney = 0;
+      let donateMoney = 0;
       if (paymentIntent.status === "succeeded") {
         const amount = paymentIntent.amount;
-        danateMoney=paymentIntent.amount
-        const donate_person_email =user.email
-        const donate_person_name =user.displayName;
-        const donate_details = {amount,donate_person_email,donate_person_name,danateMoney}
+        donateMoney = paymentIntent.amount;
+        const donate_person_email = user.email;
+        const donate_person_name = user.displayName;
+        const donate_details = { amount, donate_person_email, donate_person_name, donateMoney };
         axiosSecure.patch(`/campaigndonateUpdate/${id}`, donate_details)
-        .then(res => {
-          console.log(res.data);
-        })
+          .then(res => {
+            console.log(res.data);
+          })
         console.log("Transaction id", paymentIntent.id);
         setTransactionId(paymentIntent.id);
-        toast.success('Payment Succesfull', {
+        toast.success('Payment Successful', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -99,8 +98,7 @@ const CheckOutForm = ({pause,id}) => {
           draggable: true,
           progress: undefined,
           theme: "dark"
-          });
-
+        });
       }
     }
   };
@@ -128,28 +126,27 @@ const CheckOutForm = ({pause,id}) => {
           style: {
             base: {
               fontSize: "16px",
-              color: "##8A2BE2",
+              color: "#8A2BE2",
               "::placeholder": {
-                color: "##8A2BE2",
+                color: "#8A2BE2",
               },
             },
             invalid: {
-              color: "##8A2BE2",
+              color: "#8A2BE2",
             },
           },
         }}
       />
       <button
-       
         type="submit"
         className="btn mt-7 flex justify-center mx-auto px-10 bg-blue-500 text-white font-bold hover:text-black"
       >
         Donate
       </button>
-     <div className="p-5">
-     <p className="text-red-400">{error}</p>
-     <p className="text-green-500">Your Transaction Id: {transactionId}</p>
-     </div>
+      <div className="p-5">
+        <p className="text-red-400">{error}</p>
+        <p className="text-green-500">Your Transaction Id: {transactionId}</p>
+      </div>
     </form>
   );
 };

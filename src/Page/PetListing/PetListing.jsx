@@ -79,7 +79,7 @@ const PetListing = () => {
         <div className="w-52">
           <select
             onChange={handleCategory}
-            name="category"
+            name="type"
             className="select select-secondary w-full max-w-xs"
           >
             <option disabled selected value="">
@@ -114,7 +114,7 @@ const PetListing = () => {
                 <div className="card-body items-center text-center">
                   <h2 className="text-3xl font-bold ">{list.name}</h2>
                   <h2 className=" font-bold ">{list.date}</h2>
-                  <h3 className="text-lg font-light">Category : {list.category}</h3>
+                  <h3 className="text-lg font-light">Category : {list.type}</h3>
                   <h2 className="text-base font-light"> Age : {list.age}</h2>
                   <p className="text-xl font-semibold">Location : {list.location}</p>
                   <div className="card-actions">

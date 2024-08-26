@@ -27,7 +27,7 @@ const MyAddedPets = () => {
   });
   console.log(pets);
 
-  const columns = useMemo (
+  const columns = useMemo(
     () => [
       {
         accessorKey: "serialNumber",
@@ -81,6 +81,7 @@ const MyAddedPets = () => {
         ),
       },
     ],
+    []
   );
 
   const handleUpdate = (_id) => {
@@ -125,7 +126,7 @@ const MyAddedPets = () => {
   };
 
   const [pageIndex, setPageIndex] = useState(0);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(10); // Page size set to 10
   const [sorting, setSorting] = useState([]);
 
   const table = useReactTable({
@@ -162,7 +163,7 @@ const MyAddedPets = () => {
 
   return (
     <div className="container mx-auto">
-       <Helmet>
+      <Helmet>
         <title>Pet Adoption | My Added Pets</title>
       </Helmet>
       <h1 className="text-4xl font-bold text-center mb-6">My Added Pets</h1>
@@ -218,7 +219,6 @@ const MyAddedPets = () => {
                   </button>
                 ) : (
                   <button disabled className="to-blue-300 px-1">
-                    {" "}
                     Not Adopted
                   </button>
                 )}
@@ -261,7 +261,7 @@ const MyAddedPets = () => {
         <div className="flex justify-between items-center mt-4">
           <button
             className="px-4 py-2 bg-gray-200 text-gray-700 rounded"
-            onClick={() => table.setPageIndex(pageIndex - 1)}
+            onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
             Previous
@@ -272,7 +272,7 @@ const MyAddedPets = () => {
           </span>
           <button
             className="px-4 py-2 bg-gray-200 text-gray-700 rounded"
-            onClick={() => table.setPageIndex(pageIndex + 1)}
+            onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
             Next
@@ -280,7 +280,8 @@ const MyAddedPets = () => {
         </div>
       )}
     </div>
-  );
-};
-
-export default MyAddedPets;
+    );
+  };
+  
+  export default MyAddedPets;
+  
