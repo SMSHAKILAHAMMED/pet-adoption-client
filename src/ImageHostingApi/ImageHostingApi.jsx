@@ -1,0 +1,15 @@
+import axios from "axios";
+
+export const imageUpload = async photo => {
+       // image upload korar binary code a convert korte hobe image k maybe.
+       const formData = new FormData();
+       console.log(photo);
+       formData.append('image', photo)
+
+       // image upload korbo
+       const {data} = await axios.post(`https://api.imgbb.com/1/upload?key=7096be3cefd98c386fa70f29bbdf9681`, formData)
+       console.log(data.data.display_url)
+       return data?.data?.display_url;
+       
+}
+

@@ -1,0 +1,10 @@
+nav a.active{
+    color: #0000ff;
+    border: 0px,0px,0,2px solid skyblue;
+    border-color: #ff4880;
+    
+    
+}
+nav a.active:hover{
+    background-color: rgb(204, 0, 255);
+}
