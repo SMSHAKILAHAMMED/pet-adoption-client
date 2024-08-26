@@ -20,10 +20,10 @@ const Dashboard = () => {
   console.log(isAdmin);
 
   return (
-    <div className=" bg-gradient-to-bl  via-transparent ">
+    <div className=" bg-gradient-to-bl via-transparent ">
       <div className="flex bg-gradient-to-bl from-violet-400 via-transparent max-w-screen-xl mx-auto ">
         {/* dashboard side bar */}
-        <div className="w-64 min-h-screen bg-orange-500">
+        <div className="w-64 min-h-screen text-black bg-orange-500">
           <ul className="menu p-4">
 
             {/* shared nav links */}

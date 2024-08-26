@@ -4,10 +4,10 @@ import CheckOutForm from "./CheckOutForm";
 
 
 // TODO: add publishable key
-const stripePromise = loadStripe('pk_test_51H6O8eGa3P4tPX7Dw6vqI1eRcOa49IVdfm5RpG6pXaBJ7RcZ9qFLX5GQKNVd92UesLzxvG1jL9BTI6O4RfrC7jaP00JfrPx8dP');
+const stripePromise = loadStripe('pk_test_51PrLayRsar5yiUpxydyg5dr18txwimnr3inCHL3JNRUyFP8JYVTGwtGNmK31gBQxOFX44EomijWv1WRfSbFzjDjR00zZLCT7Je');
 
 const Payment = ({pause, id}) => {
-  // console.log(pause);
+  console.log(pause);
   return (
     <div>
       <div>

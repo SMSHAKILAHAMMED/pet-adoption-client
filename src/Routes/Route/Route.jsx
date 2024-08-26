@@ -10,7 +10,7 @@ import CampaignDetails from "../../Page/CampaignDetails/CampaignDetails";
 import Dashboard from "../../Root/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute"
 import AddPets from "../../DashBorad/AddPets/AddPets";
-import AdoptionRequest from "../../DashBorad/RequestedPeats/AdoptionRequest";
+import AdoptionRequest from "../../DashBorad/RequestedPets/AdoptionRequest";
 import CreateCampaign from "../../DashBorad/CreateCampaign/CreateCampaign";
 import MyDonationCampaign from "../../DashBorad/MyDonationCampaign/MyDonationCampaign";
 import MyDonation from "../../DashBorad/MyDonation/MyDonation";
@@ -31,7 +31,7 @@ import MyAddedPets from "../../DashBorad/MyAddedPets/MyAddedPets";
 import PetViewDetails from "../../Page/PetViewDetails/PetViewDetails";
 
 
-  const router = createBrowserRouter([
+  const Route = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
@@ -145,4 +145,4 @@ import PetViewDetails from "../../Page/PetViewDetails/PetViewDetails";
     }
   ]);
 
-  export default router;
+  export default Route;

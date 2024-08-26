@@ -68,7 +68,7 @@ const AdoptionRequest = () => {
           </span>
         </div>
 
-        <div className="bg-white text-sm font-bold text-black border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
+        <div className="bg-white text-sm font-bold text-black border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:border-neutral-700">
           <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
             <thead className="bg-sky-300 dark:bg-neutral-800">
               <tr>
@@ -136,7 +136,7 @@ const AdoptionRequest = () => {
                     <div className="ps-6 lg:ps-3 xl:ps-0 px-6 pe-6 py-3">
                       <div className="flex items-center  gap-x-3">
                         <div>
-                          <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                          <span className="block text-sm font-semibold text-gray-800">
                             {manage.RequesterName}
                           </span>
                         </div>
@@ -145,7 +145,7 @@ const AdoptionRequest = () => {
                   </td>
                   <td className="h-px w-72 whitespace-nowrap">
                     <div className="pl-6 py-3">
-                      <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                      <span className="block text-sm font-semibold text-gray-800">
                         {manage.RequesterEmail}
                       </span>
                     </div>
