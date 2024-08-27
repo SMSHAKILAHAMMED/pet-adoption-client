@@ -8,23 +8,23 @@ const Contract = () => {
 
       </Helmet>
       <h1
-        className="text-3xl pt-24 font-anton font-semibold text-center
-         underline my-5 "
+        className="text-4xl pt-20 font-anton font-semibold text-center
+         underline"
       >
         Our Branch Address
       </h1>
-      <div className="overflow-hidden my-5  h-[400px]">
+      <div className="overflow-hidden my-5 h-[400px]">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119722.08861365841!2d89.40775955059886!3d24.91635158112501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751b5f4ec8f6b73%3A0x41816d69d73b4478!2sJamalpur%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1637812040242!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119722.08861365841!2d89.40775955059886!3d24.91635158112501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751b5f4ec8f6b73%3A0x41816d69d73b4478!2sJamalpur%20District%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1637812040242!5m2!1sen!2sus"
           width="100%"
           height="100%"
           title="map"
           allowfullscreen=""
-          loading="lazy">
+          loading="">
         </iframe>
       </div>
       <section className=" bg-gray-100 rounded-xl mb-10 pt-28">
-        <div className="grid max-w-6xl grid-cols-1 px-10 lg:px-0 lg:grid-cols-6  gap-10   md:divide-x">
+        <div className="grid max-w-6xl grid-cols-1 px-10 lg:px-0 lg:grid-cols-6  gap-10 md:divide-x">
           <div className="py-20 md:py-0 col-span-2 rounded-l-xl text-white bg-slate-900 ">
             <div className="p-10">
               <p>Contact</p>

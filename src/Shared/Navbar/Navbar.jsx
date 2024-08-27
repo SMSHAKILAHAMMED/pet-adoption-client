@@ -29,7 +29,7 @@ const Navbar = () => {
   console.log(user);
   
   return (
-    <nav className="navbar container mx-auto fixed z-10 bg-opacity-30 dark:bg-gradient-to-r dark:from-10% dark:via-[#131212] dark:via-30% bg-white dark:to-[#fae1d4] w-full md:flex md:justify-between md:items-center">
+    <nav className="navbar container mx-auto fixed z-10 bg-opacity-30 dark:bg-gradient-to-r dark:from-10% dark:via-[#131212] dark:via-30% dark:to-[#fae1d4] w-full md:flex md:justify-between md:items-center">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
