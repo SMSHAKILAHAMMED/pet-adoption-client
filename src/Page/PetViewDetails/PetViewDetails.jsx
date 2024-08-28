@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 const PetViewDetails = () => {
   const params = useParams();
   const { user } = useAuth()
-  console.log(params);
+  // console.log(params);
   const [details, setdetails] = useState([]);
   const axiosPublic = useAxiosPublic();
   useEffect(() => {
@@ -16,7 +16,7 @@ const PetViewDetails = () => {
       setdetails(res.data);
     });
   }, [axiosPublic, params]);
-  console.log(details);
+  // console.log(details);
   const handleAdoptionREquest = (e) => {
     e.preventDefault();
     const requestedData = { id: details._id, AddedEmail: details.addedPerson.AddedPersonEmail, name: details.name, type: details.type, requetsed: true, adopted: details.adopted, age: details.age, date: details.date, description: details.description, img: details.img, location: details.location };
@@ -28,9 +28,9 @@ const PetViewDetails = () => {
     requestedData.RequesterName = name;
     requestedData.RequsterAddress = address;
     requestedData.RequsterNumber = numbers;
-    console.log(requestedData);
+    // console.log(requestedData);
     axiosPublic.post("/Adopted/request", requestedData).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({
           position: "top-center",

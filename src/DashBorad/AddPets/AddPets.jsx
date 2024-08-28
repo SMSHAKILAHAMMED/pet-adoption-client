@@ -46,7 +46,7 @@ const AddPets = () => {
       const imgData = await imageUpload(data.photo[0]);
       data.photo = imgData;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
 
     const petDetails = {
@@ -62,7 +62,7 @@ const AddPets = () => {
       adopted: false,
       addedPerson: { AddedPersonImage, AddedPersonName, AddedPersonEmail },
     };
-console.log(petDetails);
+// console.log(petDetails);
     axiosSecure.post("/AddPet", petDetails).then((res) => {
       if (res.data.acknowledged) {
         Swal.fire({

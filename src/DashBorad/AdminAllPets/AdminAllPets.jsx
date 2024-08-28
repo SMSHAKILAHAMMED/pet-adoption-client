@@ -23,7 +23,7 @@ const AdminAllPets = () => {
       return res.data;
     },
   });
-  console.log(pets);
+  // console.log(pets);
   const columns = useMemo(
     () => [
       {
@@ -97,11 +97,11 @@ const AdminAllPets = () => {
   );
 
   const handleUpdate = (_id) => {
-    console.log(`Update pet with ID: ${_id}`);
+    // console.log(`Update pet with ID: ${_id}`);
   };
 
   const handleDelete = async (_id) => {
-    console.log(`Delete pet with ID: ${_id}`);
+    // console.log(`Delete pet with ID: ${_id}`);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -113,7 +113,7 @@ const AdminAllPets = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`allcategory/admin/delete/${_id}`).then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.deletedCount > 0) {
             Swal.fire({
               title: "Deleted!",

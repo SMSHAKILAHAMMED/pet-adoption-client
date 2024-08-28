@@ -4,7 +4,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
 const Category = ({ item }) => {
-  console.log(item);
+  // console.log(item);
   return (
     <div>
       <div className="grid md:grid-cols-3 gap-10 px-4 items-center ">

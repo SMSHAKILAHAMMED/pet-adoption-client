@@ -7,7 +7,7 @@ import { FaAd, FaAdn, FaCalendar, FaCanadianMapleLeaf, FaCreativeCommons, FaEnve
 const Sidebar = () => {
   const [isTrue, setIsTrue] = useState(false);
   const [isAdmin] = useAdmin()
-  console.log(isAdmin);
+  // console.log(isAdmin);
   return (
    <>
    <button className="flex md:hidden text-3xl font-bold pt-10 pl-5" onClick={()=>setIsTrue(!isTrue)}><IoReorderThree /></button>

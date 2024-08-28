@@ -12,7 +12,7 @@ import { imageUpload } from "../../ImageHostingApi/ImageHostingApi";
 const Register = () => {
   const axiosPublic = useAxiosPublic()
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const [error, setError] = useState(null);
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
@@ -25,16 +25,16 @@ const Register = () => {
     try {
       const imgData = await imageUpload(image);
       // setImageURL(imgData);
-      console.log(imgData);
+      // console.log(imgData);
       image = imgData
   } catch (err) {
-      console.log(err);
+      // console.log(err);
   }
     const name = e.target.name.value;
     const photoLnk = image;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(typeof name, photoLnk, email, password);
+    // console.log(typeof name, photoLnk, email, password);
     setError(" ");
     if (
       name.length <= 0 ||
@@ -65,10 +65,10 @@ const Register = () => {
     }
     signUp(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         UpdateUser(name, photoLnk)
           .then((result) => {
-            console.log(result);
+            // console.log(result);
             const userInfo = {
               name:name,
               email: email,
@@ -76,7 +76,7 @@ const Register = () => {
             };
             axiosPublic.post("/users", userInfo).then((res) => {
               if (res.data.insertedId) {
-                console.log("user added to the database");
+                // console.log("user added to the database");
                 e.target.reset();
                 Swal.fire({
                   position: "top-center",
@@ -90,7 +90,7 @@ const Register = () => {
             });
           })
           .catch((error) => {
-            console.log(error.message);
+            // console.log(error.message);
           });
       })
       .catch((error) => {
@@ -107,13 +107,13 @@ const Register = () => {
     }
     axiosPublic.post('/users', userInfo)
     .then(res =>{
-      console.log('object');
-        console.log(res.data);
+      // console.log('object');
+        // console.log(res.data);
         navigate('/');
     })
     })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
       });
   };
   const handleSigninWithGithub = () => {
@@ -125,8 +125,8 @@ const Register = () => {
       }
       axiosPublic.post('/users', userInfo)
       .then(res =>{
-        console.log('object');
-          console.log(res.data);
+        // console.log('object');
+          // console.log(res.data);
           // navigate('/');
       })
       })

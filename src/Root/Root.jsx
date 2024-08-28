@@ -13,7 +13,7 @@ const Root = () => {
     location.pathname.includes("login") ||
     location.pathname.includes("register") ||
     location.pathname.includes("Login");
-  console.log(location);
+  // console.log(location);
   return (
     <div>
       <div className="w-full overflow-x-hidden">

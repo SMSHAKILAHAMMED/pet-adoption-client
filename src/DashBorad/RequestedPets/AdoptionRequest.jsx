@@ -16,17 +16,17 @@ const AdoptionRequest = () => {
       return res.data;
     },
   });
-  console.log(RequestedPets);
+  // console.log(RequestedPets);
   const handleAccept =(_id,id)=>{
-    console.log(_id, id);
+    // console.log(_id, id);
     axiosSecure.patch(`adopted/requestedAccept/${_id}/${id}`)
     .then(res=>{
-      console.log("working",res.data);
+      // console.log("working",res.data);
       refetch()
     })
   }
   const handleCancle =(id)=>{
-    console.log(id);
+    // console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -38,7 +38,7 @@ const AdoptionRequest = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/Adopted/request/${id}`).then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.deletedCount > 0) {
             Swal.fire({
               title: "Deleted!",

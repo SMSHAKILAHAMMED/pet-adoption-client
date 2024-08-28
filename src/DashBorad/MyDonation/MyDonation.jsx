@@ -11,7 +11,7 @@ const MyDonation = () => {
     queryKey: ["users"],
     queryFn: async () => {
       const res = await axiosSecure.get(`/myDonatePets/${authUser.email}`);
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     },
   });
@@ -27,12 +27,12 @@ const MyDonation = () => {
       confirmButtonText: "Yes!",
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log(user, amount);
+        // console.log(user, amount);
         axiosSecure
           .patch(`/refund/${user._id}/${authUser.email}`, { amount })
           .then((res) => {
             if (res.data.modifiedCount > 0) {
-              console.log(res.data);
+              // console.log(res.data);
               Swal.fire(
                 "Refunded!",
                 "Your money has been refunded.",

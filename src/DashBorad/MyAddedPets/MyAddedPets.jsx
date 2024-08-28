@@ -25,7 +25,7 @@ const MyAddedPets = () => {
       return res.data;
     },
   });
-  console.log(pets);
+  // console.log(pets);
 
   const columns = useMemo(
     () => [
@@ -85,11 +85,11 @@ const MyAddedPets = () => {
   );
 
   const handleUpdate = (_id) => {
-    console.log(`Update pet with ID: ${_id}`);
+    // console.log(`Update pet with ID: ${_id}`);
   };
 
   const handleDelete = async (_id) => {
-    console.log(`Delete pet with ID: ${_id}`);
+    // console.log(`Delete pet with ID: ${_id}`);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -101,7 +101,7 @@ const MyAddedPets = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/myAddedDelete/${_id}`).then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.deletedCount > 0) {
             Swal.fire({
               title: "Deleted!",
@@ -116,11 +116,11 @@ const MyAddedPets = () => {
   };
 
   const handleAdopted = async (_id, id) => {
-    console.log(`Adopted pet with ID: ${_id}`);
-    console.log(` pet with ID: ${id}`);
+    // console.log(`Adopted pet with ID: ${_id}`);
+    // console.log(` pet with ID: ${id}`);
 
     await axiosSecure.patch(`/myAddedAdopt/${_id}/${id}`).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       refetch();
     });
   };

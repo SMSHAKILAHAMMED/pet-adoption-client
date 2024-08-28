@@ -11,7 +11,7 @@ const CampaignDetails = () => {
 
   const params = useParams();
   const { user } = useContext(AuthContext);
-  console.log(params);
+  // console.log(params);
   const [details, setdetails] = useState([]);
   const axiosPublic = useAxiosPublic();
   useEffect(() => {
@@ -19,18 +19,18 @@ const CampaignDetails = () => {
       setdetails(res.data);
     });
   }, [axiosPublic, params]);
-  console.log(details);
+  // console.log(details);
   const handleAdoptionREquest = (e) => {
     e.preventDefault();
     setRecomended(true);
     const paymentDetails = details;
     paymentDetails.PaymentAuthorEmail = user?.email;
     paymentDetails.PaymentAuthorName = user?.displayName;
-    console.log(paymentDetails);
+    // console.log(paymentDetails);
   };
   useEffect(() => {
     axiosPublic.get("/campaignAllPeats").then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setRecomendedData(res.data);
     });
   },);

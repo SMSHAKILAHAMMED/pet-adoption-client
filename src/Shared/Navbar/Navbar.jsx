@@ -26,7 +26,7 @@ const Navbar = () => {
       .querySelector("html")
       .setAttribute("data-theme", theme ? "dark" : "light");
   }, [theme]); 
-  console.log(user);
+  // console.log(user);
   
   return (
     <nav className="navbar container mx-auto fixed z-10 bg-opacity-30 dark:bg-gradient-to-r dark:from-10% dark:via-[#131212] dark:via-30% dark:to-[#fae1d4] w-full md:flex md:justify-between md:items-center">

@@ -15,10 +15,10 @@ const CreateCampaign = () => {
     try {
       const imgData = await imageUpload(image);
       // setImageURL(imgData);
-      console.log(imgData);
+      // console.log(imgData);
       image = imgData
   } catch (err) {
-      console.log(err);
+      // console.log(err);
   }
     const date = form.date.value;
     const maxDonation = form.maxDonation.value;
@@ -37,10 +37,10 @@ const CreateCampaign = () => {
       shortDescription,
       longDescription,
     };
-    console.log(campaignDetails);
+    // console.log(campaignDetails);
     axiosSecure.post('Donation/campaign', campaignDetails)
     .then(res => {
-      console.log(res.data);
+      // console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({
           position: "top-right",

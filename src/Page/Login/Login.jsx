@@ -20,10 +20,10 @@ const Login = () => {
    
     const email = e.target.email.value;
     const password = e.target.password.value;
-     console.log(email,password);
+    //  console.log(email,password);
     login(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         toast.success('logged in Successfully')
         navigate(location?.state ? location.state : "/");
       })
@@ -44,8 +44,8 @@ const Login = () => {
       }
       axiosPublic.post('/users', userInfo)
       .then(res =>{
-        console.log('object');
-          console.log(res.data);
+        // console.log('object');
+          // console.log(res.data);
         navigate(location?.state ? location.state : "/");
       })
       })
@@ -65,8 +65,8 @@ const Login = () => {
     }
     axiosPublic.post('/users', userInfo)
     .then(res =>{
-      console.log('object');
-        console.log(res.data);
+      // console.log('object');
+      //   console.log(res.data);
       navigate(location?.state ? location.state : "/");
     })
     })

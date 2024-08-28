@@ -11,7 +11,7 @@ const DuplicateRegister = () => {
 
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
         const userInfo = {
           name: "Hacked ",
@@ -20,7 +20,7 @@ const DuplicateRegister = () => {
         };
         axiosPublic.post("/users", userInfo).then((res) => {
           if (res.data.insertedId) {
-            console.log("user added to the database");
+            // console.log("user added to the database");
             Swal.fire({
               position: "top-center",
               icon: "error",

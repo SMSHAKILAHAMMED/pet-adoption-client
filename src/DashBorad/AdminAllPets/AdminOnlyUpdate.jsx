@@ -13,7 +13,7 @@ const AdminOnlyUpdate = () => {
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
   const loadedData = useLoaderData();
-  console.log(loadedData);
+  // console.log(loadedData);
 
   const { _id, name, age, type, img, description, description2, location } = loadedData;
   const { register, reset, handleSubmit, formState: { errors } } = useForm();
@@ -31,9 +31,9 @@ const AdminOnlyUpdate = () => {
       try {
         const imgData = await imageUpload(fileInput.files[0]);
         newImage = imgData;
-        console.log(imgData);
+        // console.log(imgData);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     }
     const petDetails = {
@@ -45,7 +45,7 @@ const AdminOnlyUpdate = () => {
       description: data.note1 || description,
       description2: data.note2 || description2,
     };
-    console.log(petDetails);
+    // console.log(petDetails);
     axiosSecure.patch(`updateMyaddedPets/${_id}`, petDetails).then((res) => {
       if (res.data.modifiedCount > 0) {
         Swal.fire({
@@ -68,7 +68,7 @@ const AdminOnlyUpdate = () => {
 
   const handleChange = (selectedOption) => {
     setSelectedOption(selectedOption.value);
-    console.log(`Option selected:`, selectedOption);
+    // console.log(`Option selected:`, selectedOption);
   };
 
   return (

@@ -25,7 +25,7 @@ const HomNavbar = () => {
       .querySelector("html")
       .setAttribute("data-theme", theme ? "dark" : "light");
   }, [theme]);
-  console.log(user);
+  // console.log(user);
   return (
     <div>
       <nav className="relative ">

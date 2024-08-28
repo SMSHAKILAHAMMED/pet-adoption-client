@@ -17,7 +17,7 @@ const PetListing = () => {
       setSelectedData(res.data);
     });
   }, [axiosPublic, search]);
-  console.log(selectedData);
+  // console.log(selectedData);
 
   const handleSubmit = (e) => {
     e.preventDefault();

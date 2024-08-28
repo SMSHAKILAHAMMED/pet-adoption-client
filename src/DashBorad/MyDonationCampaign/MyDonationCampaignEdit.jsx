@@ -9,11 +9,11 @@ const MyDonationCampaignEdit = () => {
   const [editData , setEditData] = useState()
     const navigate = useNavigate()
     const params = useParams()
-    console.log(params);
+    // console.log(params);
   const axiosSecure = useAxiosSecure()
   useEffect(()=>{
     axiosSecure.get(`/campaignAllPeats/${params.id}`).then(res=> {
-        console.log(res.data);
+        // console.log(res.data);
         setEditData(res.data)
       })
    // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -21,17 +21,17 @@ const MyDonationCampaignEdit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    console.log(e.target.photo.files);
+    // console.log(e.target.photo.files);
     const name = form.name.value || editData.name;
     let image = editData.image;
     if (e.target.photo.files.length >0) {
-      console.log('object');
+      // console.log('object');
       try {
         const imgData = await imageUpload(e.target.photo.files[0]);
         image = imgData;
-        console.log(imgData);
+        // console.log(imgData);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     }
     const date = form.date.value || editData.date;
@@ -47,10 +47,10 @@ const MyDonationCampaignEdit = () => {
       longDescription,
     };
 
-    console.log(campaignDetails);
+    // console.log(campaignDetails);
     axiosSecure.patch(`/myCampaignUpdate/${params.id}`, campaignDetails)
     .then(res => {
-      console.log(res.data);
+      // console.log(res.data);
       if (res.data.modifiedCount > 0) {
         Swal.fire({
           position: "top-center",

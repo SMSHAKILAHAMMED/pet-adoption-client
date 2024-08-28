@@ -18,7 +18,7 @@ const CheckOutForm = ({ pause, id }) => {
     if (amount > 0) {
       axiosSecure.post("/create-payment-intent", { donation: amount })
         .then((res) => {
-          console.log("Client Secret fetched:", res.data.clientSecret);
+          // console.log("Client Secret fetched:", res.data.clientSecret);
           setClientSecret(res.data.clientSecret);
         })
         .catch((err) => {
@@ -46,11 +46,11 @@ const CheckOutForm = ({ pause, id }) => {
     });
 
     if (paymentMethodError) {
-      console.log("Payment error", paymentMethodError);
+      // console.log("Payment error", paymentMethodError);
       setError(paymentMethodError.message);
       return;
     } else {
-      console.log("Payment method", paymentMethod);
+      // console.log("Payment method", paymentMethod);
       setError("");
     }
 
@@ -72,10 +72,10 @@ const CheckOutForm = ({ pause, id }) => {
       });
 
     if (confirmError) {
-      console.log("Confirm error", confirmError);
+      // console.log("Confirm error", confirmError);
       setError(confirmError.message);
     } else {
-      console.log("Payment intent", paymentIntent);
+      // console.log("Payment intent", paymentIntent);
       let donateMoney = 0;
       if (paymentIntent.status === "succeeded") {
         const amount = paymentIntent.amount;
@@ -85,9 +85,9 @@ const CheckOutForm = ({ pause, id }) => {
         const donate_details = { amount, donate_person_email, donate_person_name, donateMoney };
         axiosSecure.patch(`/campaigndonateUpdate/${id}`, donate_details)
           .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
           })
-        console.log("Transaction id", paymentIntent.id);
+        // console.log("Transaction id", paymentIntent.id);
         setTransactionId(paymentIntent.id);
         toast.success('Payment Successful', {
           position: "top-right",

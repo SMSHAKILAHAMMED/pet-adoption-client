@@ -16,19 +16,19 @@ const UpdateProfile = () => {
     try {
       const imgData = await imageUpload(photo);
       // setImageURL(imgData);
-      console.log(imgData);
+      // console.log(imgData);
       photo = imgData
   } catch (err) {
-      console.log(err);
+      // console.log(err);
   }
   
     UpdateUser(name, photo)
       .then((res) => {
         toast.success("Update your info succesfully please reload and see");
-        console.log(res);
+        // console.log(res);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
   const svgs = [

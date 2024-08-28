@@ -130,7 +130,7 @@ import PetViewDetails from "../../Page/PetViewDetails/PetViewDetails";
         {
           path:'fets/updatepets/:id',
           element:<AdminRoute><AdminOnlyUpdate></AdminOnlyUpdate></AdminRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/allCategory/${params.id}`)
+          loader: ({params})=>fetch(`https://pet-adoption-server-hazel.vercel.app/allCategory/${params.id}`)
          },
          {
           path:'admin/AllDonation',
